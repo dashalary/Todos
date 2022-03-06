@@ -1,0 +1,60 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+
+name:           todos
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/dashalary/todos#readme>
+homepage:       https://github.com/dashalary/todos#readme
+bug-reports:    https://github.com/dashalary/todos/issues
+author:         Dasha Lary
+maintainer:     dasha.k.lary@gmail.com
+copyright:      BSD
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/dashalary/todos
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_todos
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable todos-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_todos
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , todos
+  default-language: Haskell2010
+
+test-suite todos-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_todos
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , todos
+  default-language: Haskell2010
