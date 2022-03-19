@@ -31,10 +31,14 @@ library
   hs-source-dirs:
       src
   build-depends:
-      base >=4.7 && <5
+      Spock >=0.14
+    , base >=4.7 && <5
+    , http-types
+    , mtl
+    , text
   default-language: Haskell2010
 
-executable todos-exe
+executable todos
   main-is: Main.hs
   other-modules:
       Paths_todos
@@ -42,7 +46,13 @@ executable todos-exe
       app
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      Spock >=0.14
+    , Spock-lucid
+    , base >=4.7 && <5
+    , http-types
+    , lucid
+    , mtl
+    , text
     , todos
   default-language: Haskell2010
 
@@ -55,6 +65,10 @@ test-suite todos-test
       test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      Spock >=0.14
+    , base >=4.7 && <5
+    , http-types
+    , mtl
+    , text
     , todos
   default-language: Haskell2010
